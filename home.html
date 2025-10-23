@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SuperMarket Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body class="bg-gradient-to-br from-green-400 via-lime-500 to-yellow-400 min-h-screen flex flex-col text-gray-900">
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center px-8 py-4 bg-white/20 backdrop-blur-md text-white">
+    <h1 class="text-2xl font-extrabold">🛒 SuperMarket</h1>
+    <nav class="space-x-6">
+      <a href="/home" class="hover:text-yellow-300">Home</a>
+      <a href="/products" class="hover:text-yellow-300">Products</a>
+      <a href="/cart" class="hover:text-yellow-300">Cart</a>
+      <a href="/contact" class="hover:text-yellow-300">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="flex flex-col md:flex-row items-center justify-center flex-grow px-10 py-20 text-center md:text-left">
+    <div class="md:w-1/2 space-y-6">
+      <h1 class="text-5xl font-extrabold text-white leading-tight">
+        Fresh Products,<br> Fast Delivery 🚚
+      </h1>
+      <p class="text-lg text-white/90">
+        Discover high-quality groceries and everyday essentials delivered right to your door.
+      </p>
+      <div class="space-x-4">
+        <a href="/products" class="px-6 py-3 bg-yellow-400 text-black rounded-full hover:bg-yellow-300 transition-all duration-300">Shop Now</a>
+        <a href="/cart" class="px-6 py-3 border border-white text-white rounded-full hover:bg-white hover:text-black transition-all duration-300">View Cart</a>
+      </div>
+    </div>
+    <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+      <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" alt="Shopping" class="w-80 drop-shadow-lg">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-white py-4 opacity-90">
+    © 2025 SuperMarket Store | Designed with 💚 by Python Flask
+  </footer>
+
+  <script>
+    // Animate elements when scrolling
+    ScrollReveal().reveal('h1', { delay: 200, origin: 'left', distance: '50px', duration: 1000 });
+    ScrollReveal().reveal('p', { delay: 400, origin: 'bottom', distance: '30px', duration: 1000 });
+    ScrollReveal().reveal('a', { delay: 600, origin: 'bottom', distance: '20px', duration: 1000 });
+    ScrollReveal().reveal('img', { delay: 800, origin: 'right', distance: '50px', duration: 1000 });
+  </script>
+
+</body>
+</html>
+

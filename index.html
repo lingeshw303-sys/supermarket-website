@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supermarket Products</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-green-400 to-lime-600 min-h-screen flex flex-col items-center py-10 text-gray-900">
+
+  <h1 class="text-4xl font-extrabold text-white mb-10 drop-shadow-md">🛒 Supermarket Products</h1>
+
+  <a href="{{ url_for('cart') }}" class="bg-yellow-400 text-black px-5 py-2 rounded-full mb-6 hover:bg-yellow-300 transition">View Cart 🛍️</a>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl w-full px-6">
+    {% for p in products %}
+    <div class="bg-white rounded-2xl shadow-xl p-5 hover:scale-105 transition-all duration-300 text-center">
+      <img src="{{ p.image }}" alt="{{ p.name }}" class="w-24 h-24 mx-auto mb-4">
+      <h2 class="text-xl font-bold mb-2">{{ p.name }}</h2>
+      <p class="text-gray-700 mb-4">₹{{ p.price }}</p>
+      <a href="{{ url_for('add_to_cart', product_id=p.id) }}" 
+         class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full inline-block">
+         Add to Cart
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+
+  <footer class="mt-10 text-white opacity-90">
+    © 2025 SuperMarket Store | Designed with ❤️ in Python Flask
+  </footer>
+
+</body>
+</html>
+
+

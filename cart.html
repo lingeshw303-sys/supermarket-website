@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-green-400 to-lime-600 min-h-screen flex flex-col items-center py-10 text-gray-900">
+
+<h1 class="text-4xl font-extrabold text-white mb-10">🛍️ Your Shopping Cart</h1>
+
+{% if cart_items %}
+<div class="bg-white p-8 rounded-2xl shadow-2xl w-11/12 md:w-2/3">
+    <table class="w-full border-collapse">
+        <thead>
+            <tr class="bg-gray-200 text-left">
+                <th class="p-3">Product</th>
+                <th class="p-3">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+            <tr class="border-b hover:bg-gray-50">
+                <td class="p-3">{{ item.name }}</td>
+                <td class="p-3">₹{{ item.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="text-right mt-6 text-xl font-bold">
+        Total: ₹{{ total }}
+    </div>
+
+    <div class="flex justify-between mt-8">
+        <a href="/" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full">Continue Shopping</a>
+        <a href="{{ url_for('checkout') }}" class="bg-yellow-400 hover:bg-yellow-300 text-black px-5 py-2 rounded-full">Checkout</a>
+    </div>
+</div>
+{% else %}
+<p class="text-white text-xl">Your cart is empty 😢</p>
+<a href="/" class="mt-5 bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full">Shop Now</a>
+{% endif %}
+
+</body>
+</html>
+
+
